@@ -39,8 +39,8 @@ export default class PortaModel {
         return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)
     }
 
-    abrir() {
+    open() {
         const aberta = true
-        return new PortaModel(this.numero, this.temPresente, this, this.selecionada, aberta)
+        return new PortaModel(this.numero, this.temPresente, this.selecionada, aberta)
     }
 }

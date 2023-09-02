@@ -11,9 +11,11 @@ function Porta(props: PortaProps) {
     const porta = props.value
     const selecionada = porta.selecionada && !porta.aberta ? styles.selecionada : ''
 
-    const abrir = e => {
+    const alternarSelecao = e => props.onChange(porta.alternarSelecao())
+
+    const openDoor = e => {
         e.stopPropagation()
-        props.onChange(porta.abrir())
+        props.onChange(porta.open())
     }
 
     function renderizarPorta() {
@@ -21,13 +23,10 @@ function Porta(props: PortaProps) {
             <div className={styles.porta}>
                 <div className={styles.numero}>{porta.numero}</div>
                 <div className={styles.macaneta}
-                    onClick={abrir}
-                ></div>
+                    onClick={openDoor}></div>
             </div>
         )
     }
-
-    const alternarSelecao = e => props.onChange(porta.alternarSelecao())
 
     return (
         <div className={styles.area} onClick={alternarSelecao}>
