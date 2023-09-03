@@ -1,4 +1,4 @@
-import styles from '@/styles/Presente.module.css'
+import styles from '../styles/Presente.module.css'
 
 function Presente() {
     return ( 
